@@ -1,0 +1,8 @@
+.layout-solution{
+    @apply w-full flex justify-center text-white md:text-5xl sm:text-4xl pb-10 font-bold;
+}
+
+.text-solution{
+    @apply text-5xl md:text-4xl;
+}
+
