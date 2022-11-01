@@ -1,15 +1,19 @@
 import React, { useState } from "react";
-import Solution from "./Solution"
+import Solution from "./Solution";
 import "../css/Quiz.css";
 
 const Quiz = () => {
+  let initNum1 = Math.floor(Math.random() * 129);
+  let initNum2 = Math.floor(Math.random() * 129);
+  let initSum = initNum1 + initNum2;
+
   const [num1, setNum1] = useState(
-    (Math.floor(Math.random() * 129).toString(2) + "").padStart(8, "0")
+    (initNum1.toString(2) + "").padStart(8, "0")
   );
   const [num2, setNum2] = useState(
-    (Math.floor(Math.random() * 129).toString(2) + "").padStart(8, "0")
+    (initNum2.toString(2) + "").padStart(8, "0")
   );
-  const [sum, setSum] = useState();
+  const [sum, setSum] = useState(initSum);
   const [ans, updateAns] = useState("");
 
   const randomNum = () => {
@@ -24,6 +28,7 @@ const Quiz = () => {
     const isCorrect = ans
       .toUpperCase()
       .localeCompare(sum.toString(16).toUpperCase());
+    console.log(sum.toString(16).toUpperCase())
     if (isCorrect === 0) {
       console.log("true");
       randomNum();
@@ -46,16 +51,10 @@ const Quiz = () => {
           />
         </div>
         <div className="layout-button-quiz">
-          <button
-            className="submit-button"
-            onClick={submitAns}
-          >
+          <button className="submit-button" onClick={submitAns}>
             Submit
           </button>
-          <button
-            className="random-button"
-            onClick={randomNum}
-          >
+          <button className="random-button" onClick={randomNum}>
             Random
           </button>
         </div>
