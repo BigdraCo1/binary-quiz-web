@@ -47,15 +47,13 @@ const Quiz = () => {
         </div>
         <div className="layout-button-quiz">
           <button
-            className="bg-teal-600 rounded-lg py-3 px-4 shadow-2xl hover:bg-teal-800 transform 
-                duration-300 motion-safe:hover:scale-110 text-slate-100 md:text-4xl sm:text-3xl"
+            className="submit-button"
             onClick={submitAns}
           >
             Submit
           </button>
           <button
-            className="bg-sky-600 rounded-lg py-3 px-4 shadow-2xl hover:bg-sky-800 transform 
-                duration-300 motion-safe:hover:scale-110 text-slate-100 md:text-4xl sm:text-3xl"
+            className="random-button"
             onClick={randomNum}
           >
             Random
