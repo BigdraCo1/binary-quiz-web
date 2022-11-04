@@ -1,5 +1,5 @@
 # Binary Quiz 1.0
-<br><br>
+<br>
 ![Untitled design (1)](https://user-images.githubusercontent.com/86193685/199864687-c94bc80e-4276-4dff-a926-18479c2466f9.png)
 
 ## Introduction
