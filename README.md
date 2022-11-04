@@ -14,4 +14,8 @@ enter key or click submit button to submit your answer. If your answer are corre
 your answer are incorrect this website will show red border at text input. You can click random button to generates new solution.
 
 ## Built With
-- asdf
+- [React](https://reactjs.org/)
+- [Tailwindcss](https://tailwindcss.com/)
+
+## Contribute
+Show your support by ⭐ the project.
