@@ -14,8 +14,8 @@ enter key or click submit button to submit your answer. If your answer are corre
 your answer are incorrect this website will show red border at text input. You can click random button to generates new solution.
 
 ## Built With
-- [React](https://reactjs.org/)
-- [Tailwindcss](https://tailwindcss.com/)
+- [React](https://reactjs.org/) - A JavaScript library for building user interfaces
+- [Tailwind CSS](https://tailwindcss.com/) - An open source CSS framework
 
 ## Contribute
 Show your support by ⭐ the project.
