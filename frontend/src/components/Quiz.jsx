@@ -15,8 +15,12 @@ const Quiz = () => {
   );
   const [sum, setSum] = useState(initSum);
   const [ans, updateAns] = useState("");
+  const [isSubmit, setIsSubmit] = useState(false);
+  const [isWrong, setIsWrong] = useState(false);
 
   const randomNum = () => {
+    setIsSubmit(false);
+    setIsWrong(false);
     let randNum1 = Math.floor(Math.random() * 129);
     let randNum2 = Math.floor(Math.random() * 129);
     setNum1((randNum1.toString(2) + "").padStart(8, "0"));
@@ -25,15 +29,17 @@ const Quiz = () => {
   };
 
   const submitAns = () => {
+    setIsSubmit(true);
     const isCorrect = ans
       .toUpperCase()
       .localeCompare(sum.toString(16).toUpperCase());
-    console.log(sum.toString(16).toUpperCase())
+    console.log(sum.toString(16).toUpperCase());
     if (isCorrect === 0) {
-      console.log("true");
+      setIsSubmit(false);
+      setIsWrong(false);
       randomNum();
     } else {
-      console.log("false");
+      setIsWrong(true);
     }
     updateAns("");
   };
@@ -42,14 +48,26 @@ const Quiz = () => {
     <div className="layout-quiz">
       <div className="m-auto">
         <Solution num1={num1} num2={num2} />
-        <div className="layout-inner-quiz">
+        <form
+          className="layout-inner-quiz"
+          onSubmit={(event) => {
+            event.preventDefault();
+            submitAns();
+          }}
+        >
           <input
             type="text"
             value={ans}
             className="input-quiz"
+            style={{
+              borderColor: isSubmit && isWrong ? "#f43f5e" : "",
+              borderWidth: isSubmit && isWrong ? "3px" : "",
+              backgroundColor: isSubmit && isWrong ? "white" : "",
+            }}
             onChange={(event) => updateAns(event.target.value)}
+            onClick={() => setIsSubmit(false)}
           />
-        </div>
+        </form>
         <div className="layout-button-quiz">
           <button className="submit-button" onClick={submitAns}>
             Submit
