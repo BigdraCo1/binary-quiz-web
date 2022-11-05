@@ -1,6 +1,7 @@
-# Binary Quiz 1.0
+# Binary Quiz 2.0
 
-![Untitled design (1)](https://user-images.githubusercontent.com/86193685/199864687-c94bc80e-4276-4dff-a926-18479c2466f9.png)
+![Untitled design (5)](https://user-images.githubusercontent.com/86193685/200098013-26b60d2d-cd7b-4f8d-b95d-e8b15eef1599.png)
+
 
 ## Introduction
 This is a website for quiz practicing about binary addition, subtraction, left shift and exclusive or 
