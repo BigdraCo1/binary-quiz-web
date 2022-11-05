@@ -1,6 +1,7 @@
 # Binary Quiz 2.0
 
-![Untitled design (5)](https://user-images.githubusercontent.com/86193685/200098013-26b60d2d-cd7b-4f8d-b95d-e8b15eef1599.png)
+
+![Untitled design (6)](https://user-images.githubusercontent.com/86193685/200098076-a4a579b7-07c2-4f2c-9465-0cdcbe38f2e6.png)
 
 
 ## Introduction
