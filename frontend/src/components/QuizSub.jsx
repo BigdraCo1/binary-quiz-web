@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Solution from "./Solution";
 import "../css/Quiz.css";
 
-const Quiz = () => {
+const QuizSub = () => {
   let initNum1 = Math.floor(Math.random() * 129);
   let initNum2 = Math.floor(Math.random() * 129);
-  let initSum = initNum1 + initNum2;
+  let initSum = initNum1 - initNum2;
 
   const [num1, setNum1] = useState(
     (initNum1.toString(2) + "").padStart(8, "0")
@@ -25,7 +25,7 @@ const Quiz = () => {
     let randNum2 = Math.floor(Math.random() * 129);
     setNum1((randNum1.toString(2) + "").padStart(8, "0"));
     setNum2((randNum2.toString(2) + "").padStart(8, "0"));
-    setSum(randNum1 + randNum2);
+    setSum(randNum1 - randNum2);
   };
 
   const submitAns = () => {
@@ -33,7 +33,6 @@ const Quiz = () => {
     const isCorrect = ans
       .toUpperCase()
       .localeCompare(sum.toString(16).toUpperCase());
-    console.log(sum.toString(16).toUpperCase());
     if (isCorrect === 0) {
       setIsSubmit(false);
       setIsWrong(false);
@@ -47,7 +46,7 @@ const Quiz = () => {
   return (
     <div className="layout-quiz">
       <div className="m-auto">
-        <Solution num1={num1} num2={num2} />
+        <Solution num1={num1} num2={num2} operator={"-"} />
         <form
           className="layout-inner-quiz"
           onSubmit={(event) => {
@@ -81,4 +80,4 @@ const Quiz = () => {
   );
 };
 
-export default Quiz;
+export default QuizSub;

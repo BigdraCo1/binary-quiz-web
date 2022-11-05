@@ -1,0 +1,11 @@
+.btm-layout {
+  @apply w-screen absolute bottom-0;
+}
+
+.btm-text-layout {
+  @apply flex justify-center items-center pb-4;
+}
+
+.btm-text {
+  @apply pr-2 text-lg;
+}
