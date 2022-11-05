@@ -55,7 +55,6 @@ const QuizLab9 = () => {
     const isCorrect = ans
       .toUpperCase()
       .localeCompare(result.toString(16).toUpperCase());
-    console.log(result.toString(16).toUpperCase());
     if (isCorrect === 0) {
       setIsSubmit(false);
       setIsWrong(false);
