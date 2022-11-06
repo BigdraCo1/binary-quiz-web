@@ -14,7 +14,7 @@ import {
 const QuizLab9 = () => {
   let initOperator = randomOp();
   let initNum1 = randomNumber();
-  let initNum2 = setNumber(randomNumber());
+  let initNum2 = setNumber(randomNumber(),initOperator);
   let initResult = getResult(initNum1, initNum2, initOperator);
   const [operator, setOperator] = useState(operators(initOperator));
   const [num1, setNum1] = useState(bin(initNum1));
@@ -29,7 +29,7 @@ const QuizLab9 = () => {
     setIsWrong(false);
     let randOperator = randomOp();
     let randNum1 = randomNumber();
-    let randNum2 = setNumber(randomNumber());
+    let randNum2 = setNumber(randomNumber(),randOperator);
     setOperator(operators(randOperator));
     setNum1(bin(randNum1));
     setNum2(bin(randNum2));
