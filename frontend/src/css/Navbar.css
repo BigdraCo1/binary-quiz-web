@@ -1,5 +1,5 @@
 .nav-layout {
-  @apply navbar bg-slate-900 shadow-2xl fixed;
+  @apply navbar bg-slate-900 shadow-2xl fixed z-40;
 }
 
 .nav-logo-layout {

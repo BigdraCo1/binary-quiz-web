@@ -25,6 +25,7 @@ const QuizSub = () => {
   };
 
   const submitAns = () => {
+    setIsSubmit(true);
     if (checkAns(ans, sum)) {
       setIsSubmit(false);
       setIsWrong(false);
