@@ -1,6 +1,6 @@
 import React from "react";
 import { FaGithub } from "react-icons/fa";
-import "../css/Bottom.css"
+import "../css/Footer.css"
 
 const Footer = () => {
   return (
@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="btm-text-layout">
         <h1 className="btm-text">following me at</h1>
         <a href="https://github.com/Bourbxn" target="_blank" rel="noreferrer">
-          <FaGithub className="text-2xl" />
+          <FaGithub className="btm-logo" />
         </a>
       </div>
     </div>
