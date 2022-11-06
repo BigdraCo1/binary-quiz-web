@@ -1,11 +1,11 @@
-# Binary Quiz 2.0
+# Binary Quiz 2.1
 
 
 ![Untitled design (6)](https://user-images.githubusercontent.com/86193685/200098076-a4a579b7-07c2-4f2c-9465-0cdcbe38f2e6.png)
 
 
 ## Introduction
-This is a website for quiz practicing about binary addition, subtraction, left shift, or, exclusive or 
+This is a website for quiz practicing about binary addition, subtraction, left shift, exclusive or 
 and answer in hexadecimal. I made this website for Lab 8 and Lab 9 in Digital System Fundamental (subject at Computer Engineering, KMITL).
 Those Lab about fast binary calculator competition but in this subject learning about Hardware and FPGA.
 I think this is so weird. 
