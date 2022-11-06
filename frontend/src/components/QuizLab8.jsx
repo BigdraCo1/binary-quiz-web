@@ -17,6 +17,7 @@ const QuizLab8 = () => {
   const randomNum = () => {
     setIsSubmit(false);
     setIsWrong(false);
+    updateAns("")
     let randNum1 = randomNumber();
     let randNum2 = randomNumber();
     setNum1(bin(randNum1));

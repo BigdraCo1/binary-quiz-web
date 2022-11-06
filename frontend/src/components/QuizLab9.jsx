@@ -27,6 +27,7 @@ const QuizLab9 = () => {
   const random = () => {
     setIsSubmit(false);
     setIsWrong(false);
+    updateAns("")
     let randOperator = randomOp();
     let randNum1 = randomNumber();
     let randNum2 = setNumber(randomNumber(),randOperator);

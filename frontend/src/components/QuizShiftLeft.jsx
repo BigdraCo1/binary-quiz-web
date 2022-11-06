@@ -17,6 +17,7 @@ const QuizShiftLeft = () => {
   const randomNum = () => {
     setIsSubmit(false);
     setIsWrong(false);
+    updateAns("")
     let randNum1 = randomNumber();
     let randNum2 = setNumber(randomNumber(),1);
     setNum1(bin(randNum1));
