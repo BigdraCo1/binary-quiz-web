@@ -1,34 +1,28 @@
 import React, { useState } from "react";
-import Solution from "./Solution";
+import SubSolution from "./SubSolution";
 import "../css/Quiz.css";
-import { bin, checkAns, randomNumber } from "../utils/Functions";
+import { bin4, checkBinHex, randomNumBin } from "../utils/Functions";
 
-const QuizXor = () => {
-  let initNum1 = randomNumber();
-  let initNum2 = randomNumber();
-  let initSum = initNum1 | initNum2;
-
-  const [num1, setNum1] = useState(bin(initNum1));
-  const [num2, setNum2] = useState(bin(initNum2));
-  const [sum, setSum] = useState(initSum);
+const QuizBinHex = () => {
+  let initNum = randomNumBin();
+  const [num, setNum] = useState(bin4(initNum));
   const [ans, updateAns] = useState("");
+  const [result, setResult] = useState(initNum);
   const [isSubmit, setIsSubmit] = useState(false);
   const [isWrong, setIsWrong] = useState(false);
 
   const randomNum = () => {
     setIsSubmit(false);
     setIsWrong(false);
-    updateAns("")
-    let randNum1 = randomNumber();
-    let randNum2 = randomNumber();
-    setNum1(bin(randNum1));
-    setNum2(bin(randNum2));
-    setSum(randNum1 | randNum2);
+    updateAns("");
+    let randNum1 = randomNumBin();
+    setNum(bin4(randNum1));
+    setResult(randNum1);
   };
 
   const submitAns = () => {
     setIsSubmit(true);
-    if (checkAns(ans, sum)) {
+    if (checkBinHex(ans, result)) {
       setIsSubmit(false);
       setIsWrong(false);
       randomNum();
@@ -41,7 +35,7 @@ const QuizXor = () => {
   return (
     <div className="layout-quiz">
       <div className="m-auto">
-        <Solution num1={num1} num2={num2} operator={"|"} />
+        <SubSolution num={num} />
         <form
           className="layout-inner-quiz"
           onSubmit={(event) => {
@@ -75,4 +69,4 @@ const QuizXor = () => {
   );
 };
 
-export default QuizXor;
+export default QuizBinHex;

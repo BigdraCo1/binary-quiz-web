@@ -3,7 +3,7 @@
 }
 
 .nav-logo-layout {
-  @apply flex-1 pl-4;
+  @apply flex-1 pl-4 items-center;
 }
 
 .nav-logo {

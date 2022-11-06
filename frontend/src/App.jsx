@@ -5,10 +5,10 @@ import QuizLab8 from "./components/QuizLab8";
 import QuizLab9 from "./components/QuizLab9";
 import QuizShiftLeft from "./components/QuizShiftLeft";
 import QuizSub from "./components/QuizSub";
-import QuizOr from "./components/QuizOr"
 import QuizXor from "./components/QuizXor";
 import Footer from "./components/Footer";
 import TabTitle from "./utils/TabTitle";
+import QuizBinHex from "./components/QuizBinHex";
 
 function App() {
   TabTitle("Binary Quiz");
@@ -23,8 +23,8 @@ function App() {
             <Route path="/lab9" element={<QuizLab9 />} />
             <Route path="/sub" element={<QuizSub />} />
             <Route path="/shift" element={<QuizShiftLeft />} />
-            <Route path="/or" element={<QuizOr />} />
             <Route path="/xor" element={<QuizXor />} />
+            <Route path="/binhex" element={<QuizBinHex />} />
             <Route path="*" element={<Navigate to="/lab8" />} />
           </Routes>
           <Footer />

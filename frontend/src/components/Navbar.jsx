@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "../css/Navbar.css";
+import { FaStar } from "react-icons/fa";
+import { GoFileBinary } from "react-icons/go"
 
 const Navbar = () => {
   const path = [
@@ -8,8 +10,8 @@ const Navbar = () => {
     { key: 2, name: "Lab - 9", to: "/lab9" },
     { key: 3, name: "Subtraction", to: "/sub" },
     { key: 4, name: "Shift Left", to: "/shift" },
-    { key: 5, name: "OR", to: "/or" },
-    { key: 6, name: "XOR", to: "/xor" },
+    { key: 5, name: "XOR", to: "/xor" },
+    { key: 6, name: "Bin to Hex", to: "/binhex" }, 
   ];
 
   const NavLinkActive = ({ isActive }) => {
@@ -20,6 +22,7 @@ const Navbar = () => {
     <div className="nav-layout">
       <div className="nav-logo-layout">
         <h1 className="nav-logo">Binary Quiz</h1>
+        <GoFileBinary className="text-2xl text-sky-500 ml-1 md:ml-2" />
       </div>
       <div className="nav-list-layout">
         <ul className="menu menu-horizontal p-0">
@@ -42,6 +45,9 @@ const Navbar = () => {
                   <li key={link.key}>
                     <NavLink className={NavLinkActive} to={link.to}>
                       {link.name}
+                      {(link.key === 1 || link.key === 2) && (
+                        <FaStar className=" text-amber-300" />
+                      )}
                     </NavLink>
                   </li>
                 );
