@@ -2,7 +2,6 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://github.com/Bourbxn/binary-quiz-web/tree/main/frontend/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
@@ -24,8 +23,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "react-scripts build && gh-pages -r https://github.com/Bourbxn/binary-quiz-web.git -d build -m \"Update\""
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
