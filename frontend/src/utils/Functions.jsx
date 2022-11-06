@@ -41,7 +41,6 @@ export const getResult = (num1, num2, op) => {
   const result = [
     num1 - num2,
     num1 << num2,
-    num1 << num2,
     num1 ^ num2,
     num1 + num2,
     num1 | num2,
