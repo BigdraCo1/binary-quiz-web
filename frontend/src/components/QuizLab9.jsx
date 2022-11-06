@@ -1,38 +1,24 @@
 import React, { useState } from "react";
-import Solution from "./Solution";
 import "../css/Quiz.css";
+import Solution from "./Solution";
+import {
+  bin,
+  getResult,
+  randomNumber,
+  randomOp,
+  operators,
+  setNumber,
+  checkAns,
+} from "../utils/Functions";
 
 const QuizLab9 = () => {
-  const decreaseNum2 = (num, op) => {
-    if (op === 1 && num > 5) {
-      num = (num % 5) + 1;
-    }
-    return num;
-  };
-
-  const getResult = (num1, num2, op) => {
-    if (op === 0) {
-      return num1 - num2;
-    } else if (op === 1) {
-      return num1 << num2;
-    } else if (op === 2) {
-      return num1 ^ num2;
-    }
-  };
-
-  let initOperator = Math.floor(Math.random() * 3);
-  let initNum1 = Math.floor(Math.random() * 129);
-  let initNum2 = decreaseNum2(Math.floor(Math.random() * 129), initOperator);
+  let initOperator = randomOp();
+  let initNum1 = randomNumber();
+  let initNum2 = setNumber(randomNumber());
   let initResult = getResult(initNum1, initNum2, initOperator);
-
-  const operators = ["-", "<<", "^"];
-  const [operator, setOperator] = useState(operators[initOperator]);
-  const [num1, setNum1] = useState(
-    (initNum1.toString(2) + "").padStart(8, "0")
-  );
-  const [num2, setNum2] = useState(
-    (initNum2.toString(2) + "").padStart(8, "0")
-  );
+  const [operator, setOperator] = useState(operators(initOperator));
+  const [num1, setNum1] = useState(bin(initNum1));
+  const [num2, setNum2] = useState(bin(initNum2));
   const [result, setResult] = useState(initResult);
   const [ans, updateAns] = useState("");
   const [isSubmit, setIsSubmit] = useState(false);
@@ -41,21 +27,18 @@ const QuizLab9 = () => {
   const random = () => {
     setIsSubmit(false);
     setIsWrong(false);
-    let randOperator = Math.floor(Math.random() * 3);
-    let randNum1 = Math.floor(Math.random() * 129);
-    let randNum2 = decreaseNum2(Math.floor(Math.random() * 129),randOperator);
-    setOperator(operators[randOperator]);
-    setNum1((randNum1.toString(2) + "").padStart(8, "0"));
-    setNum2((randNum2.toString(2) + "").padStart(8, "0"));
-    setResult(getResult(randNum1,randNum2,randOperator))
+    let randOperator = randomOp();
+    let randNum1 = randomNumber();
+    let randNum2 = setNumber(randomNumber());
+    setOperator(operators(randOperator));
+    setNum1(bin(randNum1));
+    setNum2(bin(randNum2));
+    setResult(getResult(randNum1, randNum2, randOperator));
   };
 
   const submitAns = () => {
     setIsSubmit(true);
-    const isCorrect = ans
-      .toUpperCase()
-      .localeCompare(result.toString(16).toUpperCase());
-    if (isCorrect === 0) {
+    if (checkAns(ans, result)) {
       setIsSubmit(false);
       setIsWrong(false);
       random();
@@ -94,7 +77,7 @@ const QuizLab9 = () => {
             Submit
           </button>
           <button className="random-button" onClick={random}>
-            Random
+            Skip
           </button>
         </div>
       </div>

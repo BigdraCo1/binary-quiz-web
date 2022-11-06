@@ -1,25 +1,14 @@
 import React, { useState } from "react";
 import Solution from "./Solution";
 import "../css/Quiz.css";
+import { bin, checkAns, randomNumber, setNumber } from "../utils/Functions";
 
 const QuizShiftLeft = () => {
-  const decreaseNum2 = (num) => {
-    if (num > 5) {
-      num = (num % 5) + 1;
-    }
-    return num;
-  };
-
-  let initNum1 = Math.floor(Math.random() * 129);
-  let initNum2 = decreaseNum2(Math.floor(Math.random() * 129));
+  let initNum1 = randomNumber();
+  let initNum2 = setNumber(randomNumber(),1);
   let initSum = initNum1 << initNum2;
-
-  const [num1, setNum1] = useState(
-    (initNum1.toString(2) + "").padStart(8, "0")
-  );
-  const [num2, setNum2] = useState(
-    (initNum2.toString(2) + "").padStart(8, "0")
-  );
+  const [num1, setNum1] = useState(bin(initNum1));
+  const [num2, setNum2] = useState(bin(initNum2));
   const [sum, setSum] = useState(initSum);
   const [ans, updateAns] = useState("");
   const [isSubmit, setIsSubmit] = useState(false);
@@ -28,19 +17,16 @@ const QuizShiftLeft = () => {
   const randomNum = () => {
     setIsSubmit(false);
     setIsWrong(false);
-    let randNum1 = Math.floor(Math.random() * 129);
-    let randNum2 = decreaseNum2(Math.floor(Math.random() * 129));
-    setNum1((randNum1.toString(2) + "").padStart(8, "0"));
-    setNum2((randNum2.toString(2) + "").padStart(8, "0"));
+    let randNum1 = randomNumber();
+    let randNum2 = setNumber(randomNumber(),1);
+    setNum1(bin(randNum1));
+    setNum2(bin(randNum2));
     setSum(randNum1 << randNum2);
   };
 
   const submitAns = () => {
     setIsSubmit(true);
-    const isCorrect = ans
-      .toUpperCase()
-      .localeCompare(sum.toString(16).toUpperCase());
-    if (isCorrect === 0) {
+    if (checkAns(ans,sum)) {
       setIsSubmit(false);
       setIsWrong(false);
       randomNum();
@@ -79,7 +65,7 @@ const QuizShiftLeft = () => {
             Submit
           </button>
           <button className="random-button" onClick={randomNum}>
-            Random
+            Skip
           </button>
         </div>
       </div>

@@ -8,7 +8,8 @@ const Navbar = () => {
     { key: 2, name: "Lab - 9", to: "/lab9" },
     { key: 3, name: "Subtraction", to: "/sub" },
     { key: 4, name: "Shift Left", to: "/shift" },
-    { key: 5, name: "XOR", to:"/xor"}
+    { key: 5, name: "OR", to: "/or" },
+    { key: 6, name: "XOR", to: "/xor" },
   ];
 
   const NavLinkActive = ({ isActive }) => {
