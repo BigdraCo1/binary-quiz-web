@@ -47,6 +47,7 @@ const QuizBinHex = () => {
             type="text"
             value={ans}
             className="input-quiz"
+            autoFocus
             style={{
               borderColor: isSubmit && isWrong ? "#f43f5e" : "",
               borderWidth: isSubmit && isWrong ? "3px" : "",

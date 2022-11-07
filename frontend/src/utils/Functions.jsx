@@ -25,6 +25,14 @@ export const setSubNumber = ([num1, num2], op) => {
   return [num1, num2];
 };
 
+export const setShiftLeftNumber = (num) => {
+  if (num > 255) {
+    return num - 256;
+  } else {
+    return num;
+  }
+};
+
 export const setNumber = (num, op) => {
   if (op === 1) {
     num = 1;
@@ -55,7 +63,7 @@ export const checkAns = (ans, res) => {
 
 export const checkBinHex = (ans, num) => {
   const isCorrect = ans.toUpperCase().localeCompare(hex(num));
-  console.log(isCorrect, ans, hex(num))
+  console.log(isCorrect, ans, hex(num));
   if (isCorrect === 0) {
     return true;
   } else {
@@ -64,6 +72,10 @@ export const checkBinHex = (ans, num) => {
 };
 
 export const getResult = (num1, num2, op) => {
-  const result = [num1 - num2, num1 << num2, num1 ^ num2, num1 + num2];
-  return result[op];
+  const results = [num1 - num2, num1 << num2, num1 ^ num2, num1 + num2];
+  let result = results[op];
+  if (result > 255 && op === 1) {
+    result = result - 256;
+  }
+  return result;
 };
