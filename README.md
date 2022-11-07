@@ -1,4 +1,4 @@
-[]
+[hbourbxn.github.io/binary-quiz](https://bourbxn.github.io/binary-quiz/)
 # Binary Quiz 2.1
 
 ![Untitled design (6)](https://user-images.githubusercontent.com/86193685/200098076-a4a579b7-07c2-4f2c-9465-0cdcbe38f2e6.png)
