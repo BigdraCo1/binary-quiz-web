@@ -1,5 +1,5 @@
+[]
 # Binary Quiz 2.1
-
 
 ![Untitled design (6)](https://user-images.githubusercontent.com/86193685/200098076-a4a579b7-07c2-4f2c-9465-0cdcbe38f2e6.png)
 
@@ -14,6 +14,14 @@ I think this is so weird.
 This website generates solution as random 2 binary numbers and you can answer a result in hexadecimal in text input and you can press
 enter key or click submit button to submit your answer. If your answer are correct this website will generate next solution but 
 your answer are incorrect this website will show red border at text input. You can click random button to generates new solution.
+
+## Features
+- Lab 8 Quiz
+- Lab 9 Quiz
+- Substraction Quiz
+- Shift Left Quiz
+- Exclusive Or (XOR) Quiz
+- Binary to Hexadecimal Quiz
 
 ## Built With
 - [React](https://reactjs.org/) - A JavaScript library for building user interfaces
