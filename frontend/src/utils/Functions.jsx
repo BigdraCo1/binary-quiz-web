@@ -53,8 +53,9 @@ export const hex = (int) => {
 };
 
 export const checkAns = (ans, res) => {
-  const isCorrect = ans.toUpperCase().localeCompare(hex(res));
-  if (isCorrect === 0) {
+  const isCorrect1 = ans.toUpperCase().localeCompare(hex(res));
+  const isCorrect2 = ans.toUpperCase().localeCompare(hex(res).padStart(2, "0"));
+  if (isCorrect1 === 0 || isCorrect2 === 0) {
     return true;
   } else {
     return false;
