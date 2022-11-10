@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../css/Quiz.css";
-import Solution from "./Solution";
+import Solution from "../components/Solution";
 import {
   bin,
   getResult,

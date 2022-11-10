@@ -1,16 +1,16 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./css/App.css";
-import Navbar from "./components/Navbar";
-import QuizLab8 from "./components/QuizLab8";
-import QuizLab9 from "./components/QuizLab9";
-import QuizShiftLeft from "./components/QuizShiftLeft";
-import QuizSub from "./components/QuizSub";
-import QuizXor from "./components/QuizXor";
-import Footer from "./components/Footer";
+import Navbar from "./components/Navbar"
 import TabTitle from "./utils/TabTitle";
-import QuizBinHex from "./components/QuizBinHex";
+import QuizLab8 from "./pages/QuizLab8";
+import QuizLab9 from "./pages/QuizLab9";
+import QuizSub from "./pages/QuizSub";
+import QuizShiftLeft from "./pages/QuizShiftLeft";
+import QuizXor from "./pages/QuizXor";
+import QuizBinHex from "./pages/QuizBinHex";
+import Footer from "./components/Footer";
 
-function App() {
+const App = () => {
   TabTitle("Binary Quiz");
   return (
     <div>
@@ -32,6 +32,6 @@ function App() {
       </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;

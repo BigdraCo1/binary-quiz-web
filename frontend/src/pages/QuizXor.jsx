@@ -1,18 +1,13 @@
 import React, { useState } from "react";
-import Solution from "./Solution";
+import Solution from "../components/Solution";
 import "../css/Quiz.css";
-import {
-  bin,
-  checkAns,
-  randomNumber,
-  setNumber,
-  setShiftLeftNumber,
-} from "../utils/Functions";
+import { bin, checkAns, randomNumber } from "../utils/Functions";
 
-const QuizShiftLeft = () => {
+const QuizXor = () => {
   let initNum1 = randomNumber();
-  let initNum2 = setNumber(randomNumber(), 1);
-  let initSum = setShiftLeftNumber(initNum1 << initNum2);
+  let initNum2 = randomNumber();
+  let initSum = initNum1 ^ initNum2;
+
   const [num1, setNum1] = useState(bin(initNum1));
   const [num2, setNum2] = useState(bin(initNum2));
   const [sum, setSum] = useState(initSum);
@@ -25,10 +20,10 @@ const QuizShiftLeft = () => {
     setIsWrong(false);
     updateAns("");
     let randNum1 = randomNumber();
-    let randNum2 = setNumber(randomNumber(), 1);
+    let randNum2 = randomNumber();
     setNum1(bin(randNum1));
     setNum2(bin(randNum2));
-    setSum(setShiftLeftNumber(randNum1 << randNum2));
+    setSum(randNum1 ^ randNum2);
   };
 
   const submitAns = () => {
@@ -46,7 +41,7 @@ const QuizShiftLeft = () => {
   return (
     <div className="layout-quiz">
       <div className="m-auto">
-        <Solution num1={num1} num2={num2} operator={"<<"} />
+        <Solution num1={num1} num2={num2} operator={"^"} />
         <form
           className="layout-inner-quiz"
           onSubmit={(event) => {
@@ -81,4 +76,4 @@ const QuizShiftLeft = () => {
   );
 };
 
-export default QuizShiftLeft;
+export default QuizXor;

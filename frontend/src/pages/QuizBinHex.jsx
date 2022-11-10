@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SubSolution from "./SubSolution";
+import SubSolution from "../components/SubSolution";
 import "../css/Quiz.css";
 import { bin4, checkBinHex, randomNumBin } from "../utils/Functions";
 

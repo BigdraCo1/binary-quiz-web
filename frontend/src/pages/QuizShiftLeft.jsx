@@ -1,12 +1,18 @@
 import React, { useState } from "react";
+import Solution from "../components/Solution";
 import "../css/Quiz.css";
-import Solution from "./Solution";
-import { bin, randomNumber, checkAns } from "../utils/Functions";
+import {
+  bin,
+  checkAns,
+  randomNumber,
+  setNumber,
+  setShiftLeftNumber,
+} from "../utils/Functions";
 
-const QuizLab8 = () => {
+const QuizShiftLeft = () => {
   let initNum1 = randomNumber();
-  let initNum2 = randomNumber();
-  let initSum = initNum1 + initNum2;
+  let initNum2 = setNumber(randomNumber(), 1);
+  let initSum = setShiftLeftNumber(initNum1 << initNum2);
   const [num1, setNum1] = useState(bin(initNum1));
   const [num2, setNum2] = useState(bin(initNum2));
   const [sum, setSum] = useState(initSum);
@@ -17,17 +23,17 @@ const QuizLab8 = () => {
   const randomNum = () => {
     setIsSubmit(false);
     setIsWrong(false);
-    updateAns("")
+    updateAns("");
     let randNum1 = randomNumber();
-    let randNum2 = randomNumber();
+    let randNum2 = setNumber(randomNumber(), 1);
     setNum1(bin(randNum1));
     setNum2(bin(randNum2));
-    setSum(randNum1 + randNum2);
+    setSum(setShiftLeftNumber(randNum1 << randNum2));
   };
 
   const submitAns = () => {
     setIsSubmit(true);
-    if (checkAns(ans,sum)) {
+    if (checkAns(ans, sum)) {
       setIsSubmit(false);
       setIsWrong(false);
       randomNum();
@@ -40,7 +46,7 @@ const QuizLab8 = () => {
   return (
     <div className="layout-quiz">
       <div className="m-auto">
-        <Solution num1={num1} num2={num2} operator={"+"} />
+        <Solution num1={num1} num2={num2} operator={"<<"} />
         <form
           className="layout-inner-quiz"
           onSubmit={(event) => {
@@ -75,4 +81,4 @@ const QuizLab8 = () => {
   );
 };
 
-export default QuizLab8;
+export default QuizShiftLeft;
